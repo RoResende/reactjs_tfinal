@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Bar from './Bar'
+import Bar from './components/Bar'
 
 
 function App() {
