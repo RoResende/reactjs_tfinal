@@ -1,17 +1,19 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
-import Bar from './components/Bar'
-import Routes from './routes/route'
+import List from './pages/List'
+import Repository from './pages/Repository'
+import GlobalStyles from './styles/global'
 
-
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
-      <Bar />
-      <Routes />
+      <Switch>
+        <Route path='/' exact component={List} />
+        <Route path='/repository/:repository+' exact component={Repository} />
+      </Switch>
+      <GlobalStyles />
     </BrowserRouter>
-    
   );
 }
 

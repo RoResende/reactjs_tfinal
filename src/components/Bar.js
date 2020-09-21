@@ -27,7 +27,7 @@ function Bar () {
       <Toolbar drawerClickHandler={drawerToggleClickHandler} />
       <SideDrawer show={sideDrawerOpen} />
       {backdrop}
-      <main style={{ marginTop: '60px' }}><p>Hello There!</p></main>
+      <main style={{ marginTop: '60px' }}></main>
     </div>
   );
 
