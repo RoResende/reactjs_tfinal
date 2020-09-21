@@ -1,4 +1,6 @@
-import React from 'react';
+import React,{useState} from 'react';
+
+import api from '../../services/api'
 
 import {
     ContainerProduct,
@@ -8,6 +10,27 @@ import {
     ContainerPrice,
     ContainerDescription,
 } from './style'
+
+const Home = () => {
+
+    const [lists, setLists] = useState([]);
+
+   const handleAddRepository = async () => {
+
+       // e.preventDefault();
+    try {
+        const response = await api.get('/produto');
+        const list = response.data;
+        
+        setLists([list]);
+
+   } catch (error) {
+        alert('Erro na busca por este repositório')
+   }
+   };
+
+   console.log(lists);
+
 
 const home = () => {
     return (
@@ -21,7 +44,12 @@ const home = () => {
                 </ContainerInformation>
             </ContainerProduct>
         </>
+
+    return (
+        <h1>home</h1>
+        
+
     );
 };
 
-export default home;
+export default Home;

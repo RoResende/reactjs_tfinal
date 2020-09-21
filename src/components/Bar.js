@@ -21,6 +21,7 @@ function Bar () {
   if (sideDrawerOpen) {
     backdrop = <Backdrop click={backdropClickHandler} />
   }
+  
   return (
     <div style={{ height: '100%' }} className="App">
       <Toolbar drawerClickHandler={drawerToggleClickHandler} />
