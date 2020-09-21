@@ -30,9 +30,9 @@ const Home = () => {
    };
 
    console.log(lists);
-}
 
-const home = () => {
+
+
     return (
         <>
             <ContainerProduct>
@@ -46,6 +46,6 @@ const home = () => {
         </>
 
     );
-};
+    }
 
 export default Home;
