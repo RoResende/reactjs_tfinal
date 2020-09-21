@@ -2,14 +2,14 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
 import Bar from './components/Bar'
-import Route from './routes/route'
+import Routes from './routes/route'
 
 
 function App() {
   return (
     <BrowserRouter>
       <Bar />
-      <Route />
+      <Routes />
     </BrowserRouter>
     
   );
