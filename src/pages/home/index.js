@@ -17,7 +17,7 @@ const home = () => {
                 <ContainerInformation>
                     <ContainerName>Cadeira Gamer</ContainerName>
                     <ContainerPrice>R$ 1000,00</ContainerPrice>
-                    <ContainerDescription>Cadeira totalamente pensada nos gamers</ContainerDescription>
+                    <ContainerDescription>Cadeira totalamente foda-seaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</ContainerDescription>
                 </ContainerInformation>
             </ContainerProduct>
         </>

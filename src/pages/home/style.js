@@ -25,21 +25,22 @@ export const ContainerName = styled.div`
     font-size: 4vh;
     height: 4vh;
 
-    @media(max-width: 320px) {
+    @media(max-width: 768px) {
         font-size: 14px;
     }
 `;
 export const ContainerPrice = styled.div`
     font-family: 'Noto Sans JP', sans-serif;
     display: flex;
-    padding: 10% 0% 15% 0%;
+    padding: 10% 0% 10px 0%;
     align-content: left;
     font-weight: bold;
     font-size: 4vh;
     height: 5vh;
 
-    @media(max-width: 320px) {
+    @media(max-width: 768px) {
         font-size: 20px;
+        padding: 10% 0% 10px 0%;
     }
 `;
 export const ContainerDescription = styled.div`
@@ -49,7 +50,7 @@ export const ContainerDescription = styled.div`
     font-size: 4vh;
     height: 2vh;
 
-    @media(max-width: 320px) {
+    @media(max-width: 768px) {
         font-size: 9px;
     }
 `;
