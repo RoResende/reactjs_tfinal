@@ -45,7 +45,7 @@ const home = () => {
             </ContainerProduct>
         </>
 
-    
+    );
 };
 
 export default Home;
