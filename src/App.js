@@ -1,9 +1,12 @@
 import React from 'react';
 
+import Bar from './Bar'
+
+
 function App() {
   return (
     <div className="App">
-      Hello, World!
+      <Bar />
     </div>
   );
 }
