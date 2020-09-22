@@ -98,7 +98,7 @@ const Add = () => {
                         <input type='text' placeholder='Description' value={produto.description} onChange={e => setProduto({ ...produto, descricao: e.target.value })} />
                     </div>
                     <div>
-                        <input type='number' placeholder='Stock' value={produto.qtdEstoque} onChange={e => setProduto({ ...produto, valor: parseInt(e.target.value) })}/>
+                        <input type='number' placeholder='Stock' value={produto.qtdEstoque} onChange={e => setProduto({ ...produto, qtdEstoque: parseInt(e.target.value) })}/>
                     </div>
                     <div>
                         <select placeholder="Categoria..." name="dropdown" onChange={e => setProduto({...produto, 
