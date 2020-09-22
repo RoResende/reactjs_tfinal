@@ -56,4 +56,23 @@ export const ContainerDescription = styled.div`
     }
 `;
 
+export const ContainerAdd = styled.div`
+    align-items: center;
+    input{
+        border: none;
+        margin: 0% 10% 2vh 10%;
+        width: 79.5%;
+        height: 40px;
+        background-color: #c4c4c4;
+        ::-webkit-input-placeholder{
+            color: #252526;
+        }
+
+        @media(max-width: 530px) {
+        margin-bottom: 5%;
+        width: 78.5%;
+        }
+    }
+`;
+
 
