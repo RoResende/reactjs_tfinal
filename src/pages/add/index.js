@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+import api from '../../services/api';
 
 import {
     ContainerProduct,
@@ -9,7 +11,46 @@ import {
     ContainerDescription,
 } from './style.js'
 
-const add = () => {
+const Add = () => {
+
+    const [produto, setProduto] = useState({
+        dataFabricacao: '',
+        descricao: '',
+        fotoLink: '',
+        id: 0,
+        idCategoria: 0,
+        idFuncionario: 0,
+        nome: '',
+        nomeCategoria: '',
+        nomeFuncionario: '',
+        qtdEstoque: 0,
+        valor: 0
+    });
+
+
+
+    /*useEffect(() => {
+
+        const handleAddProduct = async () => {
+            try {
+                await api.post('/produto', produto);
+
+            } catch (error) {
+                alert('Erro no acesso a API');
+            }
+        }
+
+        handleAddProduct();
+    }, [handleSubmit()]);*/
+
+    const updateInput = () => {
+        setProduto();
+    }
+
+    const handleSubmit = () => {
+        console.log(produto);
+    }
+
     return (
         <>
             <ContainerProduct>
@@ -47,4 +88,4 @@ const add = () => {
     );
 };
 
-export default add;
+export default Add;

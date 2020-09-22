@@ -26,7 +26,7 @@ const Home = () => {
                 setLists(list);
 
             } catch (error) {
-                alert('Erro na busca por este repositório')
+                alert('Erro no acesso a API');
             }
         };
         handleListProduct();
