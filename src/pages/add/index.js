@@ -9,6 +9,7 @@ import {
     ContainerName,
     ContainerPrice,
     ContainerDescription,
+    ContainerAdd,
 } from './style.js'
 
 const Add = () => {
@@ -54,7 +55,7 @@ const Add = () => {
     return (
         <>
             <ContainerProduct>
-                <ContainerImage src='https://avatars2.githubusercontent.com/u/6456100?s=400&u=0ceca3fc134b849b8ce9e2721f8698fa592a867f&v=4' alt='foto' />
+                <ContainerImage src='' alt='foto' />
                 <ContainerInformation>
                     <ContainerName>alo</ContainerName>
                     <ContainerPrice>R$ 100</ContainerPrice>
@@ -63,26 +64,23 @@ const Add = () => {
             </ContainerProduct>
             <div style={{ height: '50px' }}></div>
             <form>
-                <ContainerName>
-                    <label>Name Product</label>
-                    <input type= 'text' placehold='Nome'/>
-                </ContainerName>
-                <ContainerPrice>
-                    <label>Price</label>
-                    <input type= 'number' />
-                </ContainerPrice>
-                <ContainerDescription>
-                    <label>Description</label>
-                    <input type= 'text' />
-                </ContainerDescription>
-                <div>
-                    <label>Stock</label>
-                    <input type= 'number' />
-                </div>
-                <div>
-                    <label>Category</label>
-                    <input type= 'text' />
-                </div>
+                <ContainerAdd>
+                    <div>
+                        <input type='text' placeholder='Name Product' />
+                    </div>
+                    <div>
+                        <input type='number' placeholder='Price' />
+                    </div>
+                    <div>
+                        <input type='text' placeholder='Description' />
+                    </div>
+                    <div>
+                        <input type='number' placeholder='Stock' />
+                    </div>
+                    <div>
+                        <input type='text' placeholder='Category' />
+                    </div>
+                </ContainerAdd>
             </form>
         </>
     );
