@@ -13,21 +13,42 @@ import {
 
 const Add = () => {
 
+    const [categorias, setCategorias] = useState([]);
+
     const [produto, setProduto] = useState({
         dataFabricacao: '',
         descricao: '',
         fotoLink: '',
         id: 0,
         idCategoria: 0,
-        idFuncionario: 0,
+        idFuncionario: 1,
         nome: '',
         nomeCategoria: '',
-        nomeFuncionario: '',
+        nomeFuncionario: 'Joaquim',
         qtdEstoque: 0,
         valor: 0
     });
 
+    useEffect(() => {
+        const handleListCategorias = async () => {
 
+
+            try {
+                const response = await api.get('/categoria');
+                const list = response.data;
+                const namesList = [];
+                list.forEach(item => {
+                    namesList.push(item)
+                });
+                setCategorias(namesList);
+                
+            } catch (error) {
+                alert('Erro no acesso a API');
+            }
+        };
+        handleListCategorias();
+        
+    }, []);
 
     /*useEffect(() => {
 
@@ -43,12 +64,9 @@ const Add = () => {
         handleAddProduct();
     }, [handleSubmit()]);*/
 
-    const updateInput = () => {
-        setProduto();
-    }
-
-    const handleSubmit = () => {
-        console.log(produto);
+    const handleSubmit = e => {
+        e.preventDefault();
+        console.log(categorias);
     }
 
     return (
@@ -62,14 +80,14 @@ const Add = () => {
                 </ContainerInformation>
             </ContainerProduct>
             <div style={{ height: '50px' }}></div>
-            <form>
+            <form onSubmit={handleSubmit} >
                 <ContainerName>
                     <label>Name Product</label>
-                    <input type= 'text' placehold='Nome'/>
+                    <input type='text' value={produto.nome} onChange={e => setProduto({...produto, nome : e.target.value})} />
                 </ContainerName>
                 <ContainerPrice>
                     <label>Price</label>
-                    <input type= 'number' />
+                    <input type= 'number' value={produto.valor} onChange={e => setProduto({...produto, valor : parseFloat(e.target.value)})}/>
                 </ContainerPrice>
                 <ContainerDescription>
                     <label>Description</label>
@@ -82,6 +100,9 @@ const Add = () => {
                 <div>
                     <label>Category</label>
                     <input type= 'text' />
+                </div>
+                <div>
+                    <button>Submit</button>
                 </div>
             </form>
         </>
