@@ -150,6 +150,7 @@ export const Button = styled.div`
     justify-content: center;
 
     button{
+        cursor: pointer;
         margin-top: 10vh;
         width: 170px;
         height: 50px;
@@ -157,11 +158,18 @@ export const Button = styled.div`
         color: #f2f2f2;
         background-color: #732306;
         border: none;
+        font-size: 20px;
+
+        &:hover{
+            transition: 0.4s;
+            background-color: #5c1c04;
+        }
 
         @media(max-width: 530px) {
         width: 85px;
         height: 25px;
         border-radius: 10px;
+        font-size: 14px;
         }
     }
 `;
