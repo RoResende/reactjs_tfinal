@@ -29,7 +29,7 @@ const Add = () => {
 
 
 
-    useEffect(() => {
+    /*useEffect(() => {
 
         const handleAddProduct = async () => {
             try {
@@ -41,10 +41,10 @@ const Add = () => {
         }
 
         handleAddProduct();
-    }, [precisaFazerEvento]);
+    }, [handleSubmit()]);*/
 
     const updateInput = () => {
-        setProduto(props);
+        setProduto();
     }
 
     const handleSubmit = () => {
