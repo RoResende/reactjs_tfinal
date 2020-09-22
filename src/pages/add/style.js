@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 export const ContainerProduct = styled.div`
+    border: solid 1px #A8A8A8;
+    border-radius: 1vh;
     display: flex;
     margin: 0% 10% 2% 10%;
     border-radius: 1vh;

@@ -7,6 +7,7 @@ import {
     ContainerName,
     ContainerPrice,
     ContainerDescription,
+    ContainerSearch,
     ContainerAdd,
 } from './style.js'
 
@@ -21,7 +22,11 @@ const update = () => {
                     <ContainerDescription>teste</ContainerDescription>
                 </ContainerInformation>
             </ContainerProduct>
-            <div style={{ height: '50px' }}></div>
+            <div style={{ height: '10px' }}></div>
+            <ContainerSearch>
+                <input type='text' placeholder='Search'/>
+            </ContainerSearch>
+            <div style={{ height: '10px' }}></div>
             <form>
                 <ContainerAdd>
                     <div>

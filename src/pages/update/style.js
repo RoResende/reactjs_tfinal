@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 export const ContainerProduct = styled.div`
+    border: solid 1px #A8A8A8;
+    border-radius: 1vh;
     display: flex;
     margin: 0% 10% 2% 10%;
     border-radius: 1vh;
@@ -75,4 +77,16 @@ export const ContainerAdd = styled.div`
     }
 `;
 
-
+export const ContainerSearch = styled.div`
+    align-items: center;
+    
+    input{
+        margin: 0% 10% 0% 10%;
+        width: 300px;
+        height: 40px;
+        margin-bottom: 40px;
+        border-radius: 5px;
+        box-shadow: none;
+        border-color: #D0D0D0;
+    }
+`;

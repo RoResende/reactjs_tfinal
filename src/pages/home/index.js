@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import api from '../../services/api'
 
@@ -39,12 +40,14 @@ const Home = () => {
             {lists.map(list => {
                 return (
                     <ContainerProduct key={list.id}>
-                        <ContainerImage src={list.fotoLink} alt='foto' />
-                        <ContainerInformation>
-                            <ContainerName>{list.nome}</ContainerName>
-                            <ContainerPrice>R$ {list.valor}</ContainerPrice>
-                            <ContainerDescription>{list.descricao}</ContainerDescription>
-                        </ContainerInformation>
+                        <Link to='/update'>
+                            <ContainerImage src={list.fotoLink} alt='foto' />
+                            <ContainerInformation>
+                                <ContainerName>{list.nome}</ContainerName>
+                                <ContainerPrice>R$ {list.valor}</ContainerPrice>
+                                <ContainerDescription>{list.descricao}</ContainerDescription>
+                            </ContainerInformation>
+                        </Link>
                     </ContainerProduct>)
             })}
         </>

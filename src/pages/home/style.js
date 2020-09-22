@@ -5,6 +5,13 @@ export const ContainerProduct = styled.div`
     margin: 0% 10% 2% 10%;
     border-radius: 1vh;
     background-color: #fff;
+
+    a{
+        color: #252526;
+        width: 100%;
+        text-decoration: none;
+        display: flex;
+    }
 `;
 export const ContainerImage = styled.img`
     width: 20vh;
