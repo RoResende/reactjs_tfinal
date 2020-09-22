@@ -51,16 +51,16 @@ const Add = () => {
 
     }, []);
 
-        const handleAddProduct = async () => {
-            
-                try {
-                    await api.post('/produto', produto);
+    const handleAddProduct = async () => {
 
-                } catch (error) {
-                    alert('Erro no acesso a API');
-                }
-            
+        try {
+            await api.post('/produto', produto);
+
+        } catch (error) {
+            alert('Erro no acesso a API');
         }
+
+    }
 
     const handleSubmit = e => {
         e.preventDefault();
