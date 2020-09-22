@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const ContainerProduct = styled.div`
     display: flex;
-    margin: 5% 5% 0% 5%;
+    margin: 0% 10% 2% 10%;
     border-radius: 1vh;
     background-color: #fff;
 `;
@@ -11,6 +11,10 @@ export const ContainerImage = styled.img`
     height: 20vh;
     align-content: left;
     border-radius: 1vh 0vh 0vh 1vh;
+    @media(max-width: 530px) {
+        width: 16vh;
+        height: 16vh;
+    }
 `;
 export const ContainerInformation = styled.div`
     padding: 1%;
@@ -20,37 +24,34 @@ export const ContainerInformation = styled.div`
 export const ContainerName = styled.div`
     font-family: 'Noto Sans JP', sans-serif;
     display: flex;
-    padding: 5% 0% 0% 0%;
     align-content: left;
-    font-size: 4vh;
+    font-size: 24px;
     height: 4vh;
 
-    @media(max-width: 768px) {
+    @media(max-width: 530px) {
         font-size: 14px;
     }
 `;
 export const ContainerPrice = styled.div`
     font-family: 'Noto Sans JP', sans-serif;
     display: flex;
-    padding: 10% 0% 10px 0%;
+    padding: 5% 0% 5% 0%;
     align-content: left;
     font-weight: bold;
-    font-size: 4vh;
-    height: 5vh;
+    font-size: 30px;
 
-    @media(max-width: 768px) {
+    @media(max-width: 530px) {
         font-size: 20px;
-        padding: 10% 0% 10px 0%;
+        padding: 5% 0% 0% 0%;
     }
 `;
 export const ContainerDescription = styled.div`
     font-family: 'Noto Sans JP', sans-serif;
     display: flex;
     align-content: left;
-    font-size: 4vh;
-    height: 2vh;
+    font-size: 20px;
 
-    @media(max-width: 768px) {
-        font-size: 9px;
+    @media(max-width: 530px) {
+        font-size: 12px;
     }
 `;
