@@ -10,6 +10,9 @@ import {
     ContainerAdd,
     ContainerAddInformation,
     ContainerAddCatSto,
+    ContainerAddCategory,
+    ContainerAddStock,
+    ContainerSpace,
 } from './style.js'
 
 const update = () => {
@@ -39,12 +42,13 @@ const update = () => {
                     </ContainerAddInformation>
                 </ContainerAdd>
                 <ContainerAddCatSto>
-                    <div>
+                    <ContainerAddStock>
                         <input type='number' placeholder='Stock' />
-                    </div>
-                    <div>
+                    </ContainerAddStock>
+                    <ContainerSpace />
+                    <ContainerAddCategory>
                         <input type='text' placeholder='Category' />
-                    </div>
+                    </ContainerAddCategory>
                 </ContainerAddCatSto>
             </form>
         </>

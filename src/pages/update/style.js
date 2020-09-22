@@ -96,14 +96,15 @@ export const ContainerAddInformation = styled.div`
 `;
 
 export const ContainerAddCatSto = styled.div`
-    
+    width: 100%;
     margin: 0% 5% 0vh 5%;
-    display: flex;
-    justify-content: space-between;
-    
+    display: flex;    
+`;
+
+export const ContainerAddCategory = styled.div`
+        width: 44.65%;
     input{
-        width: 350%;
-        margin-right: 1vh;
+        width: 100%;
         border: none;
         height: 5.1vh;
         background-color: #c4c4c4;
@@ -112,9 +113,33 @@ export const ContainerAddCatSto = styled.div`
         }
         
         @media(max-width: 530px) {
-            width: 96.3%;
-            margin-bottom: 1.1vh;
+            width: 97%;
             height: 4.35vh;
         }
+    }
+`;
+
+export const ContainerAddStock = styled.div`
+        width: 44.65%;
+    input{
+        width: 100%;
+        border: none;
+        height: 5.1vh;
+        background-color: #c4c4c4;
+        &::placeholder{
+            color: #252526;
+        }
+        
+        @media(max-width: 530px) {
+            width: 97%;
+            height: 4.35vh;
+        }
+    }
+`;
+
+export const ContainerSpace = styled.div`
+    width: 9.69px;
+    @media(max-width: 530px) {
+        width: 6.53px;
     }
 `;
