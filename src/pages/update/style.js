@@ -83,7 +83,7 @@ export const ContainerAddInformation = styled.div`
         border: none;
         height: 5.1vh;
         background-color: #c4c4c4;
-        &::placeholder{
+        option{
             color: #252526;
         }
         
@@ -102,13 +102,13 @@ export const ContainerAddCatSto = styled.div`
 `;
 
 export const ContainerAddCategory = styled.div`
-        width: 44.65%;
-    input{
+        width: 44.85%;
+    select{
         width: 100%;
         border: none;
-        height: 5.1vh;
+        height: 5.3vh;
         background-color: #c4c4c4;
-        &::placeholder{
+        option{
             color: #252526;
         }
         
@@ -126,7 +126,7 @@ export const ContainerAddStock = styled.div`
         border: none;
         height: 5.1vh;
         background-color: #c4c4c4;
-        &::placeholder{
+        option{
             color: #252526;
         }
         
@@ -141,5 +141,27 @@ export const ContainerSpace = styled.div`
     width: 9.69px;
     @media(max-width: 530px) {
         width: 6.53px;
+    }
+`;
+
+export const Button = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    button{
+        margin-top: 10vh;
+        width: 170px;
+        height: 50px;
+        border-radius: 23px;
+        color: #f2f2f2;
+        background-color: #732306;
+        border: none;
+
+        @media(max-width: 530px) {
+        width: 85px;
+        height: 25px;
+        border-radius: 10px;
+        }
     }
 `;

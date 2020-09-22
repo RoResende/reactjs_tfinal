@@ -13,6 +13,7 @@ import {
     ContainerAddCategory,
     ContainerAddStock,
     ContainerSpace,
+    Button,
 } from './style.js'
 
 const update = () => {
@@ -47,10 +48,11 @@ const update = () => {
                     </ContainerAddStock>
                     <ContainerSpace />
                     <ContainerAddCategory>
-                        <input type='text' placeholder='Category' />
+                        <select type='text'><option>cimento</option></select>
                     </ContainerAddCategory>
                 </ContainerAddCatSto>
             </form>
+            <Button><button>Submit</button></Button>
         </>
     );
 };
