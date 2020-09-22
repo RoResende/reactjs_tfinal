@@ -121,8 +121,8 @@ const Add = () => {
                         </select>
                     </ContainerAddCategory>
                 </ContainerAddCatSto>
+                <Button><button>Submit</button></Button>
             </form>
-            <Button><button>Submit</button></Button>
         </>
     );
 };
