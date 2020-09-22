@@ -26,8 +26,8 @@ const Add = () => {
         nome: '',
         nomeCategoria: '',
         nomeFuncionario: 'Joaquim',
-        qtdEstoque: 0,
-        valor: 0
+        qtdEstoque: null,
+        valor: null
     });
 
     useEffect(() => {
@@ -80,9 +80,9 @@ const Add = () => {
             <ContainerProduct>
                 <ContainerImage src='' alt='foto' />
                 <ContainerInformation>
-                    <ContainerName>alo</ContainerName>
-                    <ContainerPrice>R$ 100</ContainerPrice>
-                    <ContainerDescription>teste</ContainerDescription>
+                    <ContainerName>{produto.nome}</ContainerName>
+                    <ContainerPrice>R$ {produto.valor}</ContainerPrice>
+                    <ContainerDescription>{produto.description}</ContainerDescription>
                 </ContainerInformation>
             </ContainerProduct>
             <div style={{ height: '50px' }}></div>
