@@ -78,9 +78,9 @@ const Add = () => {
             <ContainerProduct>
                 <ContainerImage src='' alt='foto' />
                 <ContainerInformation>
-                    <ContainerName>alo</ContainerName>
-                    <ContainerPrice>R$ 100</ContainerPrice>
-                    <ContainerDescription>teste</ContainerDescription>
+                    <ContainerName>{produto.nome}</ContainerName>
+                    <ContainerPrice>{produto.valor}</ContainerPrice>
+                    <ContainerDescription>{produto.descricao}</ContainerDescription>
                 </ContainerInformation>
             </ContainerProduct>
             <div style={{ height: '50px' }}></div>
