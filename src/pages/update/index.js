@@ -37,8 +37,7 @@ const Update = () => {
                 const prod = response.data;
 
                 setProduto(prod);
-                //console.log(params)
-
+                
             } catch (error) {
                 alert('Erro no acesso a API');
             }
@@ -67,10 +66,28 @@ const Update = () => {
 
     }, []);
 
+    const handleUpdateProduct = async () => {
+
+        try {
+            await api.put(`/produto/${params.id}`, produto);
+
+        } catch (error) {
+            alert('Erro no acesso a API');
+        }
+
+    }
+
     const handleClick = (e) => {
         e.preventDefault();
         console.log(produto)
+        handleUpdateProduct();
     }
+
+    const findCategoria = (id) => {
+        const result = categorias.find(cat => cat.id === parseInt(id));
+        return result.nome;
+    }
+
     console.log(produto)
     return (
         <Container>
@@ -104,7 +121,10 @@ const Update = () => {
                         <input type='number' placeholder='Stock' value={produto?.qtdEstoque} onChange={e => setProduto({ ...produto, qtdEstoque: parseInt(e.target.value) })}/>
                     </ContainerAddStock>
                     <ContainerAddCategory>
-                        <select type='text' value={produto?.nomeCategoria} >
+                        <select name="dropdown" onChange={e => setProduto({
+                            ...produto,
+                            idCategoria: parseInt(e.target.value), nomeCategoria: findCategoria(e.target.value)
+                        })}>
                             
                             {categorias.map(cat => {
                                 return (
