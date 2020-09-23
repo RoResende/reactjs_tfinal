@@ -25,26 +25,48 @@ const Update = () => {
     const { params } = useRouteMatch();
 
     const [produto, setProduto] = useState();
+    const [categorias, setCategorias] = useState([]);
 
     useEffect(() => {
         const handleProduct = async () => {
 
 
             try {
-                const response = await api.get(`/produto/${params.update}`);
+                const response = await api.get(`/produto/${params.id}`);
                 const prod = response.data;
 
                 setProduto(prod);
-                //console.log(prod)
+                //console.log(params)
 
             } catch (error) {
                 alert('Erro no acesso a API');
             }
         };
         handleProduct();
-    }, [params.update]);
+    }, [params.id]);
 
-    const handleClick = (e) =>{
+    useEffect(() => {
+        const handleListCategorias = async () => {
+
+
+            try {
+                const response = await api.get('/categoria');
+                const list = response.data;
+                const namesList = [];
+                list.forEach(item => {
+                    namesList.push(item)
+                });
+                setCategorias(namesList);
+
+            } catch (error) {
+                alert('Erro no acesso a API');
+            }
+        };
+        handleListCategorias();
+
+    }, []);
+
+    const handleClick = (e) => {
         e.preventDefault();
         console.log(produto)
     }
@@ -61,26 +83,32 @@ const Update = () => {
             </ContainerProduct>
             <form>
                 <ContainerAdd>
-                    <img src={umbreon}  alt='' />
+                    <img src={umbreon} alt='' />
                     <ContainerAddInformation>
                         <div>
-                            <input type='text' placeholder='Name Product' />
+                            <input type='text' placeholder='Name Product' value={produto?.nome} onChange={e => setProduto({ ...produto, nome: e.target.value })} />
                         </div>
                         <div>
-                            <input type='number' placeholder='Price' />
+                            <input type='number' placeholder='Price' value={produto?.valor} onChange={e => setProduto({ ...produto, valor: parseFloat(e.target.value) })}/>
                         </div>
                         <div>
-                            <input type='text' placeholder='Description' />
+                            <input type='text' placeholder='Description' value={produto?.descricao} onChange={e => setProduto({ ...produto, descricao: e.target.value })}/>
                         </div>
                     </ContainerAddInformation>
                 </ContainerAdd>
                 <ContainerAddCatSto>
                     <ContainerAddStock>
-                        <input type='number' placeholder='Stock' />
+                        <input type='number' placeholder='Stock' value={produto?.qtdEstoque} onChange={e => setProduto({ ...produto, qtdEstoque: parseInt(e.target.value) })}/>
                     </ContainerAddStock>
                     <ContainerSpace />
                     <ContainerAddCategory>
-                        <select type='text'><option>cimento</option></select>
+                        <select type='text' value={produto?.nomeCategoria} >
+                            
+                            {categorias.map(cat => {
+                                return (
+                                    <option id={cat.id} key={cat.id} value={cat.id}>{cat.nome}</option>)
+                            })};
+                        </select>
                     </ContainerAddCategory>
                 </ContainerAddCatSto>
                 <Button><button onClick={handleClick} >Submit</button></Button>
