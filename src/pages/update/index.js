@@ -1,4 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useRouteMatch } from 'react-router-dom';
+
+import api from '../../services/api'
+import umbreon from '../../assets/images/umbreon_placeholder.jpg'
 
 import {
     ContainerProduct,
@@ -16,20 +20,48 @@ import {
     Button,
 } from './style.js'
 
-const update = () => {
+const Update = () => {
+
+    const { params } = useRouteMatch();
+
+    const [produto, setProduto] = useState();
+
+    useEffect(() => {
+        const handleProduct = async () => {
+
+
+            try {
+                const response = await api.get(`/produto/${params.update}`);
+                const prod = response.data;
+
+                setProduto(prod);
+                //console.log(prod)
+
+            } catch (error) {
+                alert('Erro no acesso a API');
+            }
+        };
+        handleProduct();
+    }, [params.update]);
+
+    const handleClick = (e) =>{
+        e.preventDefault();
+        console.log(produto)
+    }
+    console.log(produto)
     return (
         <>
             <ContainerProduct>
                 <ContainerImage src='' alt='foto' />
                 <ContainerInformation>
-                    <ContainerName>alo</ContainerName>
-                    <ContainerPrice>R$ 100</ContainerPrice>
-                    <ContainerDescription>teste</ContainerDescription>
+                    <ContainerName>{produto?.nome}</ContainerName>
+                    <ContainerPrice>{produto?.valor}</ContainerPrice>
+                    <ContainerDescription>{produto?.descricao}</ContainerDescription>
                 </ContainerInformation>
             </ContainerProduct>
             <form>
                 <ContainerAdd>
-                    <img src='https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/10127049-cd7b-45bf-8f09-10742b7e5418/d31ln8w-cb91a8bb-dfd2-4a1f-9b2c-b68bfa613fb9.png/v1/fill/w_900,h_563,q_80,strp/minimalist_pokewall_umbreon_by_thermalsensor_d31ln8w-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD01NjMiLCJwYXRoIjoiXC9mXC8xMDEyNzA0OS1jZDdiLTQ1YmYtOGYwOS0xMDc0MmI3ZTU0MThcL2QzMWxuOHctY2I5MWE4YmItZGZkMi00YTFmLTliMmMtYjY4YmZhNjEzZmI5LnBuZyIsIndpZHRoIjoiPD05MDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.eKxbyDmzMD3_kSTlbruZtkHDmAa-JGEouJ32DGiotT4' alt='' />
+                    <img src={umbreon}  alt='' />
                     <ContainerAddInformation>
                         <div>
                             <input type='text' placeholder='Name Product' />
@@ -53,10 +85,10 @@ const update = () => {
                         </select>
                     </ContainerAddCategory>
                 </ContainerAddCatSto>
-                <Button><button>Submit</button></Button>
+                <Button><button onClick={handleClick} >Submit</button></Button>
             </form>
         </>
     );
 };
 
-export default update;
+export default Update;

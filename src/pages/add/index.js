@@ -111,11 +111,11 @@ const Add = () => {
                         <input type='number' placeholder='Stock' value={produto.qtdEstoque} onChange={e => setProduto({ ...produto, qtdEstoque: parseInt(e.target.value) })} />
                     </ContainerAddStock>
                     <ContainerAddCategory>
-                        <select name="dropdown" onChange={e => setProduto({
+                        <select name='dropdown' onChange={e => setProduto({
                             ...produto,
                             idCategoria: parseInt(e.target.value), nomeCategoria: findCategoria(e.target.value)
                         })}>
-                            <option selected="selected" disabled="disabled">Category....</option>
+                            <option selected="selected" disabled="disabled">Categoria....</option>
                             {categorias.map(cat => {
                                 return (
                                     <option id={cat.id} key={cat.id} value={cat.id}>{cat.nome}</option>)
