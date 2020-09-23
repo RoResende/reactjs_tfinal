@@ -5,6 +5,7 @@ import api from '../../services/api'
 import umbreon from '../../assets/images/umbreon_placeholder.jpg'
 
 import {
+    Container,
     ContainerProduct,
     ContainerImage,
     ContainerInformation,
@@ -16,8 +17,8 @@ import {
     ContainerAddCatSto,
     ContainerAddCategory,
     ContainerAddStock,
-    ContainerSpace,
     Button,
+    Image,
 } from './style.js'
 
 const Update = () => {
@@ -72,7 +73,7 @@ const Update = () => {
     }
     console.log(produto)
     return (
-        <>
+        <Container>
             <ContainerProduct>
                 <ContainerImage src='' alt='foto' />
                 <ContainerInformation>
@@ -81,9 +82,11 @@ const Update = () => {
                     <ContainerDescription>{produto?.descricao}</ContainerDescription>
                 </ContainerInformation>
             </ContainerProduct>
-            <form>
+            <form style={{ margin: '0 5% 0 5%' }}>
                 <ContainerAdd>
-                    <img src={umbreon} alt='' />
+                    <Image>
+                        <img src={umbreon} alt='' />
+                    </Image>
                     <ContainerAddInformation>
                         <div>
                             <input type='text' placeholder='Name Product' value={produto?.nome} onChange={e => setProduto({ ...produto, nome: e.target.value })} />
@@ -100,7 +103,6 @@ const Update = () => {
                     <ContainerAddStock>
                         <input type='number' placeholder='Stock' value={produto?.qtdEstoque} onChange={e => setProduto({ ...produto, qtdEstoque: parseInt(e.target.value) })}/>
                     </ContainerAddStock>
-                    <ContainerSpace />
                     <ContainerAddCategory>
                         <select type='text' value={produto?.nomeCategoria} >
                             
@@ -113,7 +115,7 @@ const Update = () => {
                 </ContainerAddCatSto>
                 <Button><button onClick={handleClick} >Submit</button></Button>
             </form>
-        </>
+        </Container>
     );
 };
 
