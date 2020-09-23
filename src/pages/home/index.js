@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import api from '../../services/api'
 
 import {
-    Container,
     ContainerProduct,
     ContainerImage,
     ContainerInformation,
@@ -37,7 +36,7 @@ const Home = () => {
     console.log(lists);
 
     return (
-        <Container>
+        <>
             {lists.map(list => {
                 return (
                     <ContainerProduct key={list.id}>
@@ -51,7 +50,7 @@ const Home = () => {
                         </Link>
                     </ContainerProduct>)
             })}
-        </Container>
+        </>
 
     );
 }

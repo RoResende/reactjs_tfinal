@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 import api from '../../services/api';
-import umbreon from '../../assets/images/umbreon_placeholder.jpg'
+import notFound from '../../assets/images/image-not-found.jpg'
 
 import {
-    Container,
     ContainerProduct,
     ContainerImage,
     ContainerInformation,
@@ -82,9 +81,9 @@ const Add = () => {
     }
 
     return (
-        <Container>
+        <>
             <ContainerProduct>
-                <ContainerImage src={umbreon} alt='foto' />
+                <ContainerImage src={notFound} alt='foto' />
                 <ContainerInformation>
                     <ContainerName>{produto.nome}</ContainerName>
                     <ContainerPrice>R$ {produto.valor}</ContainerPrice>
@@ -94,7 +93,7 @@ const Add = () => {
             <form onSubmit={handleSubmit} style={{ margin: '0 5% 0 5%' }}>
                 <ContainerAdd>
                     <Image>
-                        <img src='' alt='' />
+                        <img src={notFound} alt='' />
                     </Image>
                     <ContainerAddInformation>
                         <div>
@@ -127,7 +126,7 @@ const Add = () => {
                 </ContainerAddCatSto>
                 <Button><button>Submit</button></Button>
             </form>
-        </Container>
+        </>
     );
 };
 
