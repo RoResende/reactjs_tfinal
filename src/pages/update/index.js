@@ -48,7 +48,9 @@ const update = () => {
                     </ContainerAddStock>
                     <ContainerSpace />
                     <ContainerAddCategory>
-                        <select type='text'><option>cimento</option></select>
+                        <select>
+                            <option selected="selected" disabled="disabled">Category....</option>
+                        </select>
                     </ContainerAddCategory>
                 </ContainerAddCatSto>
                 <Button><button>Submit</button></Button>

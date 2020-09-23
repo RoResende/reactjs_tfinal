@@ -71,13 +71,13 @@ export const ContainerAdd = styled.div`
     }
 `;
 export const ContainerAddInformation = styled.div`
-   
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     flex: 1;
     
     input{
+        font-size: 24px;
         margin: 0vh 0vh 2vh 1vh;
         width: 99.1%;
         border: none;
@@ -91,6 +91,7 @@ export const ContainerAddInformation = styled.div`
             width: 96.3%;
             margin-bottom: 1.1vh;
             height: 4.35vh;
+            font-size: 16px;
         }
     }
 `;
@@ -104,6 +105,7 @@ export const ContainerAddCatSto = styled.div`
 export const ContainerAddCategory = styled.div`
         width: 44.85%;
     select{
+        font-size: 24px;
         width: 100%;
         border: none;
         height: 5.3vh;
@@ -115,6 +117,7 @@ export const ContainerAddCategory = styled.div`
         @media(max-width: 530px) {
             width: 97%;
             height: 4.35vh;
+            font-size: 16px;
         }
     }
 `;
@@ -122,6 +125,7 @@ export const ContainerAddCategory = styled.div`
 export const ContainerAddStock = styled.div`
         width: 44.65%;
     input{
+        font-size: 24px;
         width: 100%;
         border: none;
         height: 5.1vh;
@@ -133,6 +137,7 @@ export const ContainerAddStock = styled.div`
         @media(max-width: 530px) {
             width: 97%;
             height: 4.35vh;
+            font-size: 16px;
         }
     }
 `;
