@@ -63,3 +63,14 @@ export const ContainerDescription = styled.div`
         font-size: 12px;
     }
 `;
+
+export const Delete = styled.button`
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+    margin: 2vh;
+`;
+
+export const Space = styled.div`
+    flex: 1;
+`;

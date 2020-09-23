@@ -1,10 +1,4 @@
 import styled from 'styled-components'
-import backgroundImage from '../../assets/images/umbreonfundo.png'
-
-export const Container = styled.div`
-    /* background: url(${backgroundImage}) no-repeat;
-    background-position: right; */
-`;
 
 export const ContainerProduct = styled.div`
     border: solid 1px #A8A8A8;
