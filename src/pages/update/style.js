@@ -1,4 +1,10 @@
 import styled from 'styled-components'
+import backgroundImage from '../../assets/images/umbreonfundo.png'
+
+export const Container = styled.div`
+    /* background: url(${backgroundImage}) no-repeat;
+    background-position: right; */
+`;
 
 export const ContainerProduct = styled.div`
     border: solid 1px #A8A8A8;
@@ -59,11 +65,14 @@ export const ContainerDescription = styled.div`
 
 export const ContainerAdd = styled.div`
     display: flex;
-    margin: 0% 5% 0vh 5%;
+
+    div{
+        flex: 1;
+    }
+
     img{
         height: 20vh;
         width: 20vh;
-
         @media(max-width: 530px) {
             width: 16vh;
             height: 16vh;
@@ -71,76 +80,70 @@ export const ContainerAdd = styled.div`
     }
 `;
 export const ContainerAddInformation = styled.div`
-   
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    flex: 1;
-    
+
     input{
-        margin: 0vh 0vh 2vh 1vh;
-        width: 99.1%;
+        margin-bottom: 1vh;
+        width: 100%;
+        padding: 0 0 0 0;
+        font-size: 24px;
         border: none;
-        height: 5.1vh;
+        height: 6vh;
         background-color: #c4c4c4;
         option{
             color: #252526;
         }
         
         @media(max-width: 530px) {
-            width: 96.3%;
-            margin-bottom: 1.1vh;
-            height: 4.35vh;
+            width: 100%;
+            height: 4.65vh;
+            font-size: 16px;
         }
     }
 `;
 
 export const ContainerAddCatSto = styled.div`
-    width: 100%;
-    margin: 0% 5% 0vh 5%;
-    display: flex;    
+    display: flex;
 `;
 
 export const ContainerAddCategory = styled.div`
-        width: 44.85%;
+    width: 50%;
     select{
         width: 100%;
+        font-size: 24px;
         border: none;
-        height: 5.3vh;
+        height: 6vh;
         background-color: #c4c4c4;
         option{
             color: #252526;
         }
         
         @media(max-width: 530px) {
-            width: 97%;
-            height: 4.35vh;
+            height: 4.65vh;
+            font-size: 16px;
         }
     }
 `;
 
 export const ContainerAddStock = styled.div`
-        width: 44.65%;
+    width: 50%;
     input{
-        width: 100%;
+        width: 98.5%;
+        padding: 0 0 0 0;
+        font-size: 24px;
         border: none;
-        height: 5.1vh;
+        height: 6vh;
         background-color: #c4c4c4;
         option{
             color: #252526;
         }
         
         @media(max-width: 530px) {
-            width: 97%;
-            height: 4.35vh;
+            width: 96%;
+            height: 4.65vh;
+            font-size: 16px;
         }
-    }
-`;
-
-export const ContainerSpace = styled.div`
-    width: 9.69px;
-    @media(max-width: 530px) {
-        width: 6.53px;
     }
 `;
 
@@ -171,5 +174,14 @@ export const Button = styled.div`
         border-radius: 10px;
         font-size: 14px;
         }
+    }
+`;
+
+export const Image = styled.p`
+    margin: 0 0 0 0;
+    width: 21vh;
+
+    @media(max-width: 530px) {
+        width: 17vh;
     }
 `;

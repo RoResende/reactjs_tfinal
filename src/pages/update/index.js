@@ -5,6 +5,7 @@ import api from '../../services/api'
 import umbreon from '../../assets/images/umbreon_placeholder.jpg'
 
 import {
+    Container,
     ContainerProduct,
     ContainerImage,
     ContainerInformation,
@@ -16,8 +17,8 @@ import {
     ContainerAddCatSto,
     ContainerAddCategory,
     ContainerAddStock,
-    ContainerSpace,
     Button,
+    Image,
 } from './style.js'
 
 const Update = () => {
@@ -44,13 +45,13 @@ const Update = () => {
         handleProduct();
     }, [params.update]);
 
-    const handleClick = (e) =>{
+    const handleClick = (e) => {
         e.preventDefault();
         console.log(produto)
     }
     console.log(produto)
     return (
-        <>
+        <Container>
             <ContainerProduct>
                 <ContainerImage src='' alt='foto' />
                 <ContainerInformation>
@@ -59,9 +60,11 @@ const Update = () => {
                     <ContainerDescription>{produto?.descricao}</ContainerDescription>
                 </ContainerInformation>
             </ContainerProduct>
-            <form>
+            <form style={{ margin: '0 5% 0 5%' }}>
                 <ContainerAdd>
-                    <img src={umbreon}  alt='' />
+                    <Image>
+                        <img src={umbreon} alt='' />
+                    </Image>
                     <ContainerAddInformation>
                         <div>
                             <input type='text' placeholder='Name Product' />
@@ -78,14 +81,15 @@ const Update = () => {
                     <ContainerAddStock>
                         <input type='number' placeholder='Stock' />
                     </ContainerAddStock>
-                    <ContainerSpace />
                     <ContainerAddCategory>
-                        <select type='text'><option>cimento</option></select>
+                        <select>
+                            <option selected="selected" disabled="disabled">Category....</option>
+                        </select>
                     </ContainerAddCategory>
                 </ContainerAddCatSto>
                 <Button><button onClick={handleClick} >Submit</button></Button>
             </form>
-        </>
+        </Container>
     );
 };
 
