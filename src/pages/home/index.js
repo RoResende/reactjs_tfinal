@@ -40,7 +40,7 @@ const Home = () => {
             {lists.map(list => {
                 return (
                     <ContainerProduct key={list.id}>
-                        <Link to='/update'>
+                        <Link to={`/update/${list.id}` }>
                             <ContainerImage src={list.fotoLink} alt='foto' />
                             <ContainerInformation>
                                 <ContainerName>{list.nome}</ContainerName>
