@@ -94,7 +94,7 @@ const Update = () => {
                 <ContainerImage src={notFound} alt='foto' />
                 <ContainerInformation>
                     <ContainerName>{produto?.nome}</ContainerName>
-                    <ContainerPrice>{produto?.valor}</ContainerPrice>
+                    <ContainerPrice>R$ {produto?.valor}</ContainerPrice>
                     <ContainerDescription>{produto?.descricao}</ContainerDescription>
                 </ContainerInformation>
             </ContainerProduct>

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 import api from '../../services/api'
 
@@ -7,12 +6,15 @@ import {
     ContainerProduct,
     ContainerImage,
     ContainerInformation,
+    Space,
+    Delete,
     ContainerName,
     ContainerPrice,
     ContainerDescription,
 } from './style'
+import { FiTrash2 } from 'react-icons/fi';
 
-const Home = () => {
+const Del = () => {
 
     const [lists, setLists] = useState([]);
 
@@ -39,14 +41,14 @@ const Home = () => {
             {lists.map(list => {
                 return (
                     <ContainerProduct key={list.id}>
-                        <Link to={`/update/${list.id}`}>
                             <ContainerImage src={list.fotoLink} alt='foto' />
                             <ContainerInformation>
                                 <ContainerName>{list.nome}</ContainerName>
                                 <ContainerPrice>R$ {list.valor}</ContainerPrice>
                                 <ContainerDescription>{list.descricao}</ContainerDescription>
                             </ContainerInformation>
-                        </Link>
+                        <Space />
+                        <Delete><FiTrash2 /></Delete>
                     </ContainerProduct>
                 )
             })}
@@ -55,4 +57,4 @@ const Home = () => {
     );
 }
 
-export default Home;
+export default Del;
