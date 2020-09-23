@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import api from '../../services/api'
+import notFound from '../../assets/images/image-not-found.jpg'
 
 import {
     ContainerProduct,
@@ -33,6 +34,9 @@ const Home = () => {
         handleListProduct();
     }, []);
 
+    const addDefaultImg = (e) => {
+        e.target.src = notFound;
+    }
 
     return (
         <>
@@ -40,7 +44,7 @@ const Home = () => {
                 return (
                     <ContainerProduct key={list.id}>
                         <Link to={`/update/${list.id}`}>
-                            <ContainerImage src={list.fotoLink} alt='foto' />
+                            <ContainerImage src={list.fotoLink} onError={addDefaultImg} alt='foto' />
                             <ContainerInformation>
                                 <ContainerName>{list.nome}</ContainerName>
                                 <ContainerPrice>R$ {list.valor}</ContainerPrice>

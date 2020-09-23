@@ -87,11 +87,15 @@ const Update = () => {
         return result.nome;
     }
 
+    const addDefaultImg = (e) => {
+        e.target.src = notFound;
+    }
+
     console.log(produto)
     return (
         <>
             <ContainerProduct>
-                <ContainerImage src={notFound} alt='foto' />
+                <ContainerImage src={produto?.fotoLink} onError={addDefaultImg} alt='foto' />
                 <ContainerInformation>
                     <ContainerName>{produto?.nome}</ContainerName>
                     <ContainerPrice>R$ {produto?.valor}</ContainerPrice>
@@ -101,7 +105,7 @@ const Update = () => {
             <form style={{ margin: '0 5% 0 5%' }}>
                 <ContainerAdd>
                     <Image>
-                        <img src={notFound} alt='' />
+                        <img src={produto?.fotoLink} onError={addDefaultImg} alt='' />
                     </Image>
                     <ContainerAddInformation>
                         <div>
