@@ -14,8 +14,8 @@ import {
     ContainerAddCatSto,
     ContainerAddCategory,
     ContainerAddStock,
-    ContainerSpace,
     Button,
+    Image,
 } from './style.js'
 
 const Add = () => {
@@ -89,9 +89,11 @@ const Add = () => {
                     <ContainerDescription>{produto.descricao}</ContainerDescription>
                 </ContainerInformation>
             </ContainerProduct>
-            <form onSubmit={handleSubmit} >
+            <form onSubmit={handleSubmit} style={{ margin: '0 5% 0 5%' }}>
                 <ContainerAdd>
-                    <img src='https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/10127049-cd7b-45bf-8f09-10742b7e5418/d31ln8w-cb91a8bb-dfd2-4a1f-9b2c-b68bfa613fb9.png/v1/fill/w_900,h_563,q_80,strp/minimalist_pokewall_umbreon_by_thermalsensor_d31ln8w-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD01NjMiLCJwYXRoIjoiXC9mXC8xMDEyNzA0OS1jZDdiLTQ1YmYtOGYwOS0xMDc0MmI3ZTU0MThcL2QzMWxuOHctY2I5MWE4YmItZGZkMi00YTFmLTliMmMtYjY4YmZhNjEzZmI5LnBuZyIsIndpZHRoIjoiPD05MDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.eKxbyDmzMD3_kSTlbruZtkHDmAa-JGEouJ32DGiotT4' alt='' />
+                    <Image>
+                        <img src='' alt='' />
+                    </Image>
                     <ContainerAddInformation>
                         <div>
                             <input type='text' placeholder='Name Product' value={produto.nome} onChange={e => setProduto({ ...produto, nome: e.target.value })} />
@@ -108,7 +110,6 @@ const Add = () => {
                     <ContainerAddStock>
                         <input type='number' placeholder='Stock' value={produto.qtdEstoque} onChange={e => setProduto({ ...produto, qtdEstoque: parseInt(e.target.value) })} />
                     </ContainerAddStock>
-                    <ContainerSpace />
                     <ContainerAddCategory>
                         <select name="dropdown" onChange={e => setProduto({
                             ...produto,

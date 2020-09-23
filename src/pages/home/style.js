@@ -1,4 +1,9 @@
 import styled from 'styled-components'
+import backgroundImage from
+
+export const Container = styled.div`
+    background-image
+`;
 
 export const ContainerProduct = styled.div`
     display: flex;
