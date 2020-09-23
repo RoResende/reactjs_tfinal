@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 import api from '../../services/api';
+import umbreon from '../../assets/images/umbreon_placeholder.jpg'
 
 import {
+    Container,
     ContainerProduct,
     ContainerImage,
     ContainerInformation,
@@ -80,9 +82,9 @@ const Add = () => {
     }
 
     return (
-        <>
+        <Container>
             <ContainerProduct>
-                <ContainerImage src='' alt='foto' />
+                <ContainerImage src={umbreon} alt='foto' />
                 <ContainerInformation>
                     <ContainerName>{produto.nome}</ContainerName>
                     <ContainerPrice>R$ {produto.valor}</ContainerPrice>
@@ -115,7 +117,7 @@ const Add = () => {
                             ...produto,
                             idCategoria: parseInt(e.target.value), nomeCategoria: findCategoria(e.target.value)
                         })}>
-                            <option selected="selected" disabled="disabled">Categoria....</option>
+                            <option selected="selected" disabled="disabled">Category...</option>
                             {categorias.map(cat => {
                                 return (
                                     <option id={cat.id} key={cat.id} value={cat.id}>{cat.nome}</option>)
@@ -125,7 +127,7 @@ const Add = () => {
                 </ContainerAddCatSto>
                 <Button><button>Submit</button></Button>
             </form>
-        </>
+        </Container>
     );
 };
 

@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import backgroundImage from
+import backgroundImage from '../../assets/images/umbreonfundo.png'
 
 export const Container = styled.div`
-    background-image
+    /* background: url(${backgroundImage}) no-repeat; */
 `;
 
 export const ContainerProduct = styled.div`

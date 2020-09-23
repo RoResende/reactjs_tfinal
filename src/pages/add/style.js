@@ -1,4 +1,10 @@
 import styled from 'styled-components'
+import backgroundImage from '../../assets/images/umbreonfundo.png'
+
+export const Container = styled.div`
+    /* background: url(${backgroundImage}) no-repeat;
+    background-position: right; */
+`;
 
 export const ContainerProduct = styled.div`
     border: solid 1px #A8A8A8;
@@ -90,7 +96,7 @@ export const ContainerAddInformation = styled.div`
         }
         
         @media(max-width: 530px) {
-            width: 97%;
+            width: 100%;
             height: 4.65vh;
             font-size: 16px;
         }
@@ -173,5 +179,9 @@ export const Button = styled.div`
 
 export const Image = styled.p`
     margin: 0 0 0 0;
-    width: 21vh
+    width: 21vh;
+
+    @media(max-width: 530px) {
+        width: 17vh;
+    }
 `;
