@@ -17,6 +17,7 @@ import { FiTrash2 } from 'react-icons/fi';
 const Del = () => {
 
     const [lists, setLists] = useState([]);
+    const [refresh, setRefresh] = useState(true)
 
     useEffect(() => {
         const handleListProduct = async () => {
@@ -27,14 +28,24 @@ const Del = () => {
                 const list = response.data;
 
                 setLists(list);
-
+                setRefresh(false);
             } catch (error) {
                 alert('Erro no acesso a API');
             }
         };
         handleListProduct();
-    }, []);
+    }, [refresh]);
 
+    const handleDelete = async (id) => {
+        try {
+            await api.delete(`/produto/${id}`);
+            setRefresh(true);
+
+        } catch (error) {
+            alert('Erro no acesso a API');
+        }
+        console.log(id)
+    }
 
     return (
         <>
@@ -48,7 +59,7 @@ const Del = () => {
                                 <ContainerDescription>{list.descricao}</ContainerDescription>
                             </ContainerInformation>
                         <Space />
-                        <Delete><FiTrash2 /></Delete>
+                        <Delete value={list.id} onClick={() => (handleDelete(list.id))} ><FiTrash2 /></Delete>
                     </ContainerProduct>
                 )
             })}
