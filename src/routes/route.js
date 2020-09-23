@@ -11,7 +11,7 @@ const Routes = () => (
         <Switch>
             <Route exact path="/" component={Home}/>
             <Route  path="/add" component={Add}/>
-            <Route  path="/update" component={Update}/>
+            <Route  path={`/update/:update+`} component={Update}/>
         </Switch>
     
 )
