@@ -69,6 +69,7 @@ export const Delete = styled.button`
     background-color: #fff;
     cursor: pointer;
     margin: 2vh;
+    height: 20px;
 `;
 
 export const Space = styled.div`
