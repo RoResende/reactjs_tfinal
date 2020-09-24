@@ -22,6 +22,7 @@ import {
 const Add = () => {
 
     const [categorias, setCategorias] = useState([]);
+    const [arquivo, setArquivo] = useState(null);
 
     const [produto, setProduto] = useState({
         dataFabricacao: '2019-10-01T00:00:00Z',
@@ -61,7 +62,15 @@ const Add = () => {
     const handleAddProduct = async () => {
 
         try {
-            await api.post('/produto', produto);
+            const fd = FormData();
+            fd.append('file', arquivo, arquivo.name);
+            fd.append('produto', produto);
+            await api.post('/produto/comfoto', fd,{
+                headers: {
+                    'content-type': 'multipart/form-data',
+                  }
+            });
+            //await api.post('/produto', produto);
 
         } catch (error) {
             alert('Erro no acesso a API');
@@ -71,7 +80,7 @@ const Add = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(produto);
+        console.log(arquivo.name);
         handleAddProduct();
     }
 
@@ -80,10 +89,14 @@ const Add = () => {
         return result.nome;
     }
 
+    const selecionaArquivo = (event) => {
+        setArquivo(event.target.files[0]);
+    };
+
     return (
         <>
             <ContainerProduct>
-                <ContainerImage src={notFound} alt='foto' />
+                <ContainerImage src={arquivo} alt='foto' />
                 <ContainerInformation>
                     <ContainerName>{produto.nome}</ContainerName>
                     <ContainerPrice>R$ {produto.valor}</ContainerPrice>
@@ -104,6 +117,9 @@ const Add = () => {
                         </div>
                         <div>
                             <input type='text' placeholder='Description' value={produto.description} onChange={e => setProduto({ ...produto, descricao: e.target.value })} />
+                        </div>
+                        <div>
+                            <input type='file' value={produto?.fotoLink} onChange={e => selecionaArquivo(e)} />
                         </div>
                     </ContainerAddInformation>
                 </ContainerAdd>
