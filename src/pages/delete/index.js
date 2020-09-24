@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import api from '../../services/api'
+import notFound from '../../assets/images/image-not-found.jpg'
 
 import {
     ContainerProduct,
@@ -47,12 +48,16 @@ const Del = () => {
         console.log(id)
     }
 
+    const addDefaultImg = (e) => {
+        e.target.src = notFound;
+    }
+
     return (
         <>
             {lists.map(list => {
                 return (
                     <ContainerProduct key={list.id}>
-                            <ContainerImage src={list.fotoLink} alt='foto' />
+                            <ContainerImage src={list.fotoLink} onError={addDefaultImg} alt='foto' />
                             <ContainerInformation>
                                 <ContainerName>{list.nome}</ContainerName>
                                 <ContainerPrice>R$ {list.valor}</ContainerPrice>
